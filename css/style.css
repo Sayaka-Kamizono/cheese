@@ -1,0 +1,544 @@
+
+/*全体　共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+html {
+  background-image: url(../背景.jpg);
+}
+
+
+body{
+	font-family: Roboto, "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+	line-height: 1.75;
+	font-size: 16px;
+	width: 960px;
+  margin-right: auto;
+  margin-left : auto;
+  background: rgba(248, 246, 246, 0.3);
+  /*opacity: .5;*/
+} 
+
+
+
+/*　パディングをサイズ内側にする処理　*/
+* {
+	padding:0;
+	margin:0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+.title_box {
+	background-image: url(../img/mainbg.png);
+  background-size: cover;
+	background-position: center;
+	height: 400px;
+	display:flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+	padding: 40px;
+}
+
+.title_box_title1 {
+	font-size: 48px;
+	color: white;
+}
+
+.title_box_title2 {
+	font-size: 36px;
+	color: white;
+}
+
+.nav {
+  font-size: 21px;
+  height: 90px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.nav_left {
+  width: 50%;
+}
+
+.nav_right {
+  width: 50%;
+}
+
+nav {
+  padding: 13px;
+}
+
+
+.nav_right li {
+  text-align: center;
+	height: 46px;
+	width: 85px;
+  list-style-type : none;
+  background      : linear-gradient(rgba(5, 14, 139, 0.4) 75%, rgba(240, 136, 214, 0.911) 100%);
+
+  display: inline-flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: row;
+	
+  cursor  : pointer;
+  padding : 4px 4px;
+}
+
+
+
+.nav_right a {
+  display : block;
+  padding : 10px 10px;
+  font-size : 16px;
+	width: 95px;
+  text-decoration : none;
+  border-radius   : 5px;
+  position        : relative;
+  top   : 0;
+  color : #FFF;     
+  transition : all .4s;
+}
+
+li:hover a {
+  top   : -20px;
+  color : #4eacff;
+  background-color: rgb(237, 246, 247);
+  box-shadow : 0 0 5px 0 rgba(255, 255, 255, 0.7);
+  transition : all .4s;
+}
+
+li a:after {
+  display  :flex;
+  content  : '';
+  position : absolute;
+  top  : 100%;
+  left : 42%;
+  border-style : solid;
+  border-color : transparent;
+  border-width : 5px 5px 0 5px;
+  transition   : all .4s;
+}
+
+li:hover a:after {
+  border-color : rgb(237, 246, 247) transparent transparent transparent;
+  transition   : all .4s;
+}
+
+/*************************************/
+
+
+
+
+
+
+
+
+.ABOUT_title {
+	font-size: 24px;
+	color :#ffd61a;
+	text-align: center;
+	margin-top: 120px;
+	margin-bottom: 24px;
+}
+.ABOUT_text {
+	font-size: 16px;
+	color: black;
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+.ABOUT_text_box {
+	padding-bottom: 30px;
+}
+
+.css-slider { 
+  width: 300px; 
+  height: 200px; 
+  
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  height: 300px; 
+  overflow: hidden;
+}
+
+.slideshow {
+  display: flex;
+	animation: loop-slide 20s infinite linear 1s both;
+}
+
+@keyframes loop-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+} 
+
+.content {
+  width: auto;
+  height: auto;
+}
+
+
+.COURSE{
+	margin-top: 80px;
+}
+
+.COURSE_title{
+	font-size: 24px;
+	color :#ffd61a;
+	text-align: center;
+}
+
+.COURSE_text{
+	font-size: 16px;
+	color: black;
+	text-align: center;
+	padding-bottom: 64px;
+	padding-top: 64px;
+}
+
+.COURSE_box1 {
+	display: flex;
+}
+
+.COURSE_box1_left {
+ width: 50%;
+}
+
+.COURSE_box1_left img {
+ width: 100%;	
+}
+
+.COURSE_box1_right {
+	width: 50%;
+	display: flex;
+	justify-content:center;
+  align-items: center;
+  background: linear-gradient(-45deg, rgba(255, 255, 0, 0.4), rgba(230, 94, 207, 0.4));
+  background-size: cover;
+}
+ .COURSE_box1_right div {
+	 width: 90%;
+ }
+
+ .COURSE_box1_right_title {
+	 font-size: 24px;
+	 color: black;
+ }
+
+ .COURSE_box2 {
+	display: flex;
+}
+
+.COURSE_box2_right {
+ width: 50%;
+}
+
+.COURSE_box2_right img {
+ width: 100%;	
+}
+
+.COURSE_box2_left {
+	width: 50%;
+	display: flex;
+	justify-content:center;
+  align-items: center;
+  background: linear-gradient(-45deg, rgba(255, 255, 0, 0.4), rgba(94, 210, 230, 0.4));
+}
+ .COURSE_box2_left div {
+	 width: 90%;
+ }
+
+ .COURSE_box2_left_title {
+	 font-size: 24px;
+	 color: black;
+ }
+
+ .COURSE_box3 {
+	display: flex;
+}
+
+.COURSE_box3_left {
+ width: 50%;
+}
+
+.COURSE_box3_left img {
+ width: 100%;	
+}
+
+.COURSE_box3_right {
+	width: 50%;
+	display: flex;
+	justify-content:center;
+  align-items: center;
+  background: linear-gradient(-45deg, rgba(255, 255, 0, 0.4), rgba(230, 94, 207, 0.4));
+}
+ .COURSE_box3_right div {
+	 width: 90%;
+ }
+
+ .COURSE_box3_right_title {
+	 font-size: 24px;
+	 color: black;
+ }
+
+ .NEWS_title {
+	font-size: 24px;
+	color :#ffd61a;
+	text-align: center;
+	margin-top: 64px;
+	margin-bottom: 24px;
+}
+.NEWS_text {
+	font-size: 16px;
+	color: black;
+	text-align: center;
+	margin-bottom: 64px;
+}
+
+.NEWS_box {
+	width: 960px;
+	display: flex;
+	/* justify-content: center; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.NEWS_box_small {
+  width: 270px;
+	/*padding-left: 20px;
+  padding-bottom: 10px;*/
+	text-align: center;
+}
+
+.NEWS_box_small img {
+	margin-bottom: 12px;
+	width: 270px;
+}
+
+
+.grad-btn {
+  /*.grad-btnのCSSは表示/非表示の動作には関係ないので、ご自由にどうぞ。*/
+}
+.grad-btn::before {
+  content: "続きを読む"
+}
+.grad-item {
+  position: relative;
+  overflow: hidden;
+  height: 0px; /*隠した状態の高さ*/
+}
+.grad-item::before {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; /*グラデーションで隠す高さ*/
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%);
+  background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%);
+  content: "";
+}
+.grad-trigger {
+  display: none; /*チェックボックスは常に非表示*/
+}
+.grad-trigger:checked ~ .grad-btn::before {
+  content: "閉じる" /*チェックされていたら、文言を変更する*/
+}
+.grad-trigger:checked ~ .grad-item {
+  height: auto; /*チェックされていたら、高さを戻す*/
+}
+.grad-trigger:checked ~ .grad-item::before {
+  display: none; /*チェックされていたら、grad-itemのbeforeを非表示にする*/
+}
+
+
+
+
+
+
+.date {
+	padding-top: 6px;
+  padding-bottom: 6px;
+	background-color: darkgrey;
+	color: ivory;
+}
+
+
+.ACCESS {
+  text-align: center;
+  align-items: center;
+  background: rgba(225, 235, 85, 0.4);
+  padding-bottom: 40px;
+}
+
+.ACCESS_title {
+	font-size: 24px;
+	color :#ffd61a;
+	text-align: center;
+	margin-top: 120px;
+	margin-bottom: 24px;
+}
+.ACCESS_text {
+	font-size: 16px;
+	color: black;
+	text-align: center;
+	margin-bottom: 80px;
+  padding-bottom: 20px;
+}
+
+table {
+  margin: auto;
+}
+
+td {
+  text-align: left;
+  padding-left: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.CONTACT_title {
+	font-size: 24px;
+	color :#ffd61a;
+	text-align: center;
+	margin-top: 120px;
+	margin-bottom: 24px;
+}
+.CONTACT_text {
+	font-size: 16px;
+	color: black;
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+
+
+
+
+.FORM {
+  width: 960px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: auto;
+  
+}
+
+.item {
+  overflow: hidden;
+  margin-bottom: 20px;
+	justify-content: left;
+  align-items: left;
+  padding-left: 80px;
+}
+
+.item2 {
+  overflow: hidden;
+  margin-bottom: 20px;
+	justify-content: left;
+  align-items: left;
+}
+.label{
+  float: left;
+  margin-right: 20px;
+  margin-top: 5px;
+  width:135px;
+  padding-left: 10px;
+  text-align: left;
+}
+.inputs{
+  float: left;
+  width:300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+input[type="text"],input[type="email"]{
+  border: solid 1px #eef107;
+  border-radius:5px;
+  padding:10px;
+  font-size: 15px;
+}
+textarea{
+  border: solid 1px #eef107;
+  border-radius:5px;
+  padding: 10px;
+  height: 160px;
+  font-size: 15px;
+}
+.btn-area{
+  text-align: center;
+}
+input[type="submit"]{
+  background: #ff9f45;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size:18px;
+  font-weight:bold;
+  padding: 10px 100px;
+  margin: 0 5px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+.footer{
+  background-color: gray;
+  width: 960px;
+  text-align:center;
+  margin-top: 20px;
+}
+
+.copyrights{
+	font-size: 8px;
+	color: honeydew;
+	margin-left: auto;
+  margin-right: auto;
+	
+}
+
+.wrapper {
+  text-align:center;
+}
