@@ -85,7 +85,7 @@ nav {
 	height: 46px;
 	width: 85px;
   list-style-type : none;
-  background      : linear-gradient(rgba(5, 14, 139, 0.4) 75%, rgba(240, 136, 214, 0.911) 100%);
+  background      : linear-gradient(rgba(9, 235, 243, 0.4) 75%, rgba(240, 216, 136, 0.9) 100%);
 
   display: inline-flex;
   justify-content:center;
@@ -113,7 +113,7 @@ nav {
 
 li:hover a {
   top   : -20px;
-  color : #4eacff;
+  color : #2c91eb;
   background-color: rgb(237, 246, 247);
   box-shadow : 0 0 5px 0 rgba(255, 255, 255, 0.7);
   transition : all .4s;
@@ -335,42 +335,65 @@ li:hover a:after {
 }
 
 
-.grad-btn {
-  /*.grad-btnのCSSは表示/非表示の動作には関係ないので、ご自由にどうぞ。*/
+/*こっから試作*/
+.cp_box *, .cp_box *:before, .cp_box *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
-.grad-btn::before {
-  content: "続きを読む"
+.cp_box {
+	position: relative;
 }
-.grad-item {
-  position: relative;
-  overflow: hidden;
-  height: 0px; /*隠した状態の高さ*/
+.cp_box label {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	width: 100%;
+	height: 100px; /* グラデーションの高さ */
+	cursor: pointer;
+	text-align: center;
+	/* 以下グラデーションは背景を自身のサイトに合わせて設定してください */
+	background: linear-gradient(to bottom, rgba(250, 252, 252, 0) 0%, rgba(250, 252, 252, 0.8) 90%);
 }
-.grad-item::before {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40px; /*グラデーションで隠す高さ*/
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%);
-  background: linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.9) 50%, #fff 100%);
-  content: "";
+.cp_box input:checked + label {
+	background: inherit; /* 開いた時にグラデーションを消す */
 }
-.grad-trigger {
-  display: none; /*チェックボックスは常に非表示*/
+.cp_box label:after {
+	line-height: 2.5rem;
+	position: absolute;
+	z-index: 2;
+	bottom: 20px;
+	left: 50%;
+	width: 16rem;
+	font-family: FontAwesome;
+	content: '▼もっと見る';
+	transform: translate(-50%, 0);
+	letter-spacing: 0.05em;
+	color: #ffffff;
+	border-radius: 20px;
+	background-color: rgba(27, 37, 56, 1);
 }
-.grad-trigger:checked ~ .grad-btn::before {
-  content: "閉じる" /*チェックされていたら、文言を変更する*/
+.cp_box input {
+	display: none;
 }
-.grad-trigger:checked ~ .grad-item {
-  height: auto; /*チェックされていたら、高さを戻す*/
+.cp_box .cp_container {
+	overflow: hidden;
+	height: 700px; /* 開く前に見えている部分の高さ */
+	transition: all 0.5s;
 }
-.grad-trigger:checked ~ .grad-item::before {
-  display: none; /*チェックされていたら、grad-itemのbeforeを非表示にする*/
+.cp_box input:checked + label {
+	/* display: none ; 閉じるボタンを消す場合解放 */
+}
+.cp_box input:checked + label:after {
+	font-family: FontAwesome;
+	content: '▲閉じる';
+}
+.cp_box input:checked ~ .cp_container {
+	height: auto;
+	padding-bottom: 80px; /* 閉じるボタンのbottomからの位置 */
+	transition: all 0.5s;
 }
 
-
+/*ここまで試作*/
 
 
 
@@ -520,6 +543,78 @@ input[type="submit"]{
 
 
 
+
+
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+/* ページTOPに戻る */
+page_top{
+  width: 10px;
+  height: 10px;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #ef3f98;
+  opacity: 0.6;
+  border-radius: 50%;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 90px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -40px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+#page_top a::after{
+  content: 'PAGE TOP';
+  font-size: 13px;
+  color: #fff;
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
 
 
 
